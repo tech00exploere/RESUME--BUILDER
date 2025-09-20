@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <h1>Welcome to Resume Builder</h1>
+  <h1>RESUME Builder</h1>
   <p class="intro">This is a simple web application to help you build your resume.</p>
 
   <div class="section">
@@ -52,5 +52,36 @@
     <a href="#">+ Add portfolio link or upload sample</a>
   </div>
 
+  <a href="#" onclick="addSkill()">+ Add more skills</a>
+
+<script>
+  let skillCount = 4;
+  function addSkill() {
+    skillCount++;
+    const newInput = document.createElement("input");
+    newInput.type = "text";
+    newInput.placeholder = "Enter another skill";
+    newInput.id = "skill" + skillCount;
+    document.querySelector(".section:nth-of-type(2)").appendChild(newInput);
+  }
+</script>
+
+<input type="url" placeholder="Paste portfolio link here" />
+<input type="file" />
+
+<div style="text-align: center;">
+  <button type="submit" style="
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+  ">Submit</button>
+</div>
+<button onclick="submitForm()">Download PDF Resume</button>
+
+<script src="script.js"></script>
 </body>
 </html>
